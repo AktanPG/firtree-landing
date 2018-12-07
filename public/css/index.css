@@ -66,6 +66,12 @@ body {
     margin: 1rem 4rem;
 }
 
+@media (max-width: 554px) {
+    .one {
+        margin: 3rem 4rem;
+    }
+}
+
 .one i {
     display: flex;
     justify-content: center;
@@ -88,6 +94,12 @@ body {
     background-attachment: fixed;
     background-position: center 20%;
     background-size: cover;
+}
+
+@media (max-width: 746px) {
+    .container-backs {
+        padding: 3rem 0;
+    }
 }
 
 .feedbacks h1 {
@@ -150,6 +162,12 @@ body {
     font-weight: bold;
     transition: box-shadow 0.3s;
     font-family: 'PT Sans Caption', sans-serif;
+}
+
+@media (max-width: 626px) {
+    .tree {
+        margin: 2rem 2rem;
+    }   
 }
 
 .tree:hover {
@@ -330,13 +348,19 @@ form input[type=submit]:hover {
 
 .footer {
     width: 100%;
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: tomato;
     position: relative;
 }
+
+@media (max-width: 550px) {
+    .footer {
+        justify-content: flex-end;
+    }
+} 
 
 .footer div {
     margin: 0 2rem;
