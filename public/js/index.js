@@ -17,7 +17,7 @@ function clickHandler (e) {
         orderBody.push(e.target.parentElement.children[1].textContent);
     }
 
-    order.style.transform = 'scale(1)';
+    order.style.transform = 'translateX(0)';
 }
 
 const $ = (value) => document.querySelector(value); 
@@ -58,5 +58,5 @@ document.querySelector('.send-button').addEventListener('click', async() => {
 });
 
 document.querySelector('.exit').addEventListener('click', () => {
-    order.style.transform = 'scale(0)';
+    order.style.transform = 'translateX(-100%)';
 });

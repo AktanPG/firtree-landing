@@ -223,7 +223,7 @@ body {
     justify-content: center;
     align-items: center;
     transition: all 0.2s;
-    transform: scale(0)
+    transform: translateX(-100%)
 }
 
 .exit {
