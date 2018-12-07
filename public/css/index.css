@@ -1,0 +1,413 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    padding: 0.5rem;
+    background-color: rgba(255, 99, 71, 0.76);
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+}
+
+.header .brand {
+    color: #fff;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.full-bgc {
+    width: 100%;
+    height: 100vh;
+    background: url('https://res.cloudinary.com/grami/image/upload/v1544086941/christmas-3840x2160-new-year-toys-fir-tree-fireplace-decorations-4k-16789.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.full-bgc .text {
+    padding: 1rem;
+    position: absolute;
+    font-size: 3rem;
+    max-width: 300px;
+    color: #fff;
+    font-weight: bold;
+    font-family: 'Unlock', cursive;
+    top: 50%;
+    right: 16%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 99, 71, 0.76);
+}
+
+.advantages {
+    padding: 5rem 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.one {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 4rem;
+}
+
+.one i {
+    display: flex;
+    justify-content: center;
+    font-size: 5rem;
+    color: tomato;
+}
+
+.one .text {
+    font-family: 'PT Sans Caption', sans-serif;
+    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: rgba(0, 0, 0, 0.705);
+}
+
+.feedbacks {
+    width: 100%;
+    min-height: 100vh;
+    background: url('https://res.cloudinary.com/grami/image/upload/v1544168024/New-Year-Tree-Wallpaper-06.jpg');
+    background-attachment: fixed;
+    background-position: center 20%;
+    background-size: cover;
+}
+
+.feedbacks h1 {
+    text-align: center;
+    color: tomato;  
+    background-color: #fff;
+    font-family: 'PT Sans Caption', sans-serif;
+    padding-bottom: 1rem;
+}
+
+.container-backs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 1024px;
+    margin: 0 auto;
+    min-height: 100vh;
+}
+
+.feedback {
+    flex-basis: calc(1024px / 3);
+    background-color: #fff;
+    padding: 1rem;
+    margin: 1rem;
+    min-height: 100px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.feedback .text {
+    font-family: 'PT Sans Caption', sans-serif;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.692);
+}
+
+.feedback .date {
+    font-family: 'PT Sans Caption', sans-serif;
+    font-weight: bold;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    color: tomato;
+}
+
+.firtrees {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    flex-wrap: wrap;
+}
+
+.tree {
+    overflow: hidden;
+    border-radius: 20px;    
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.514);
+    width: 200px;
+    margin: 1rem 2rem;
+    font-weight: bold;
+    transition: box-shadow 0.3s;
+    font-family: 'PT Sans Caption', sans-serif;
+}
+
+.tree:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.514);
+}
+
+.tree .image {
+    width: 100%;
+    height: 230px;
+}
+
+.tree .title {
+    color: tomato;
+    text-align: left;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.row {
+    padding: 0.5rem;
+    position: relative;
+    background-color: grey;
+    margin: 1rem 0.5rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.row:hover {
+    background-color: rgba(128, 128, 128, 0.651);
+}
+
+.row .cost {
+    color: rgba(255, 255, 255, 0.596);
+}
+
+.row .height {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    background-color: #ccc;
+    color: rgba(0, 0, 0, 0.705);
+}
+
+.order {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.753);
+    z-index: 10000;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    transform: scale(0)
+}
+
+.exit {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.exit:hover {
+    color: rgba(255, 255, 255, 0.671);
+}
+
+.order-form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.order-form input {
+    margin: 0.5rem 0;
+    padding: 1rem;
+    font-family: 'PT Sans Caption', sans-serif;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.753);
+    transition: background-color 0.3s;
+}
+
+.order-form input:focus {
+    background-color: #fff;
+}
+
+.send-button {
+    min-width: 100px;
+    text-align: center;
+    padding: 1rem;
+    background-color: tomato;
+    font-family: 'PT Sans Caption', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.send-button:hover {
+    background-color: rgba(255, 99, 71, 0.712);
+}
+
+.contact {
+    width: 100%;
+    height: 100vh;
+    background: url('https://res.cloudinary.com/grami/image/upload/v1544176773/christmas_decorations_new_year_christmas_christmas_tree_118570_3840x2400.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+form h1 {
+    font-family: 'Rubik', sans-serif;
+    color: rgba(255, 255, 255, 0.747);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form input {
+    margin: 1rem 0;
+    font-family: 'Rubik', sans-serif;
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    border: 2px solid rgba(255, 255, 255, 0.685);
+    border-radius: 20px;
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+}
+
+form input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.801);
+    font-weight: bold;
+}
+
+form textarea {
+    font-family: 'Rubik', sans-serif;
+    padding: 0.5rem;
+    font-size: 1.1rem;  
+    border: 2px solid rgba(255, 255, 255, 0.685);
+    border-radius: 20px;
+    background-color: transparent;
+    outline: none;
+    color: #fff;
+}
+
+form input[type=submit] {
+    cursor: pointer;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.692);
+    transition: box-shadow 0.3s;
+}
+
+form input[type=submit]:hover {
+    box-shadow: inset 0 0 5px #ccc;
+}
+
+.footer {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: tomato;
+    position: relative;
+}
+
+.footer div {
+    margin: 0 2rem;
+}
+
+.footer div a {
+    color: #fff;
+    font-size: 3rem;
+    transition: color 0.3s;
+}
+
+.footer div a:hover {
+    color: rgba(255, 255, 255, 0.534);
+}
+
+.creater {
+    font-size: 1.5rem;
+    position: absolute;
+    left: 2rem;
+    color: rgba(255, 255, 255, 0.623);
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+}
+
+.success {
+    text-align: center;
+    color: rgb(46, 160, 46);
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+}
+
+.error {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+}
+
+.error-contact {
+    text-align: center;
+    color: greenyellow;
+    font-weight: bold;
+    font-family: 'Rubik', sans-serif;
+}
+
+@media (max-width: 400px) {
+    .order-form {
+        width: 90%;
+        padding: 0.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .contact form {
+        width: 90%;
+    }
+}
+
+@media (max-width: 700px) {
+    .full-bgc {
+        width: 100%;
+        height: 100vh;
+        background-position: 10% center;
+        position: relative;
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .container-backs {
+        width: 100%;
+    }
+
+}

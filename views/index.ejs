@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BF inc.</title>
+    <link rel="stylesheet" href="/assets/css/index.css">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/grami/image/upload/v1544192628/christmas-tree-icon.png" type="image/x-icon"/>
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans+Caption|Rubik" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Courgette|PT+Sans+Caption|Playfair+Display|Righteous|Unlock" rel="stylesheet">
+</head>
+<body>
+    <!-- <div class="header">
+        <a href="/" class="brand">
+            FirTrees.R
+        </a>
+    </div> -->
+    <div class="full-bgc">
+        <div class="text">
+            Create you own fairy tale
+        </div>
+    </div>
+    <div class="advantages">
+        <div class="one">
+            <i class="fa fa-truck"></i>
+            <div class="text">Быстрая доставка</div>
+        </div>
+        <div class="one">
+            <i class="fa fa-tree"></i>
+            <div class="text">Высшее качество</div>
+        </div>
+        <div class="one">
+            <i class="fa fa-dollar"></i>
+            <div class="text">Низкая цена</div>
+        </div>
+    </div>
+    <div class="feedbacks">
+        <h1>Отзывы</h1>
+        <div class="container-backs">
+            <div class="feedback">
+                <div class="text">Спасибо за быструю доставку</div>
+                <div class="date">02.12.2018</div>
+            </div>
+            <div class="feedback">
+                <div class="text">
+                    Заказал голубую ель.
+                    Хорошое качеств, хоть и 
+                    немного опоздали с доставкой
+                </div>
+                <div class="date">06.12.2018</div>
+            </div>
+            <div class="feedback">
+                <div class="text">Я купил золотую ель, мне понравилось. А можно оптом закупить у вас ?</div>
+                <div class="date">29.11.2018</div>
+            </div>
+            <div class="feedback">
+                <div class="text">О господи пришло. Спасибо</div>
+                <div class="date">04.12.2018</div>
+            </div>
+            <div class="feedback">
+                <div class="text">Хорошая компания, хоть и недавно открылась</div>
+                <div class="date">07.12.2018</div>
+            </div>
+        </div>
+    </div>
+    <div class="order">
+        <div class="exit">
+            <i class="fa fa-window-close"></i>
+        </div>
+        <div class="order-form">
+            <input type="text" placeholder="Name" class="order-name">
+            <input type="number" placeholder="Phone" class="order-number">
+            <div class="product"></div>
+            <div class="massage"></div>
+            <div class="send-button">Отправить</div>
+        </div>
+    </div>
+    <div class="firtrees">
+        <% trees.forEach(tree => { %>
+            <div class="tree">
+                <div 
+                    class="image"
+                    style="background: url('<%= tree.image%>') center center / cover;"
+                >
+                </div>
+                <div class="title">
+                    <%= tree.title%>
+                </div>
+                <div class="prices" data-title="<%= tree.title%>">
+                    <% tree.prices.forEach(price => { %>
+                        <div class="row">
+                            <div class="cost"><%= price.cost%> coм</div>
+                            <div class="height"><%= price.height%></div>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+    <div class="contact">
+        <form action="/massage" method="POST">
+            <h1>Связаться с нами</h1>
+            <div class="error-contact">
+                <%if(error) {%>
+                    <%= error%>
+                <% } %>
+            </div>
+            <input type="text" name="name" required placeholder="Name">
+            <input type="text" name="email" required placeholder="Email">
+            <textarea name="text" cols="30" rows="10">
+            </textarea>
+            <input type="submit" value="Отпрвить">
+        </form>
+    </div>
+    <div class="footer">
+        <div class="creater">KAMBI</div>
+        <div>
+            <a href="https://www.instagram.com/novogodnie_elki.kg/?hl=ru" target="_blanck">
+                <i class="fa fa-instagram"></i>
+            </a>
+        </div>
+    </div>
+    <script src="/assets/js/index.js"></script>
+</body>
+</html>

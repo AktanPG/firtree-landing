@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin</title>
+    
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+</head>
+<body>
+    
+    <form enctype="multipart/form-data">
+        <input type="file" multiple="false" id="image" name="avatar">
+    </form>
+    <div class="form">
+        <label for="image">
+            <div class="image-button">Image</div>
+        </label>
+        <input type="text" class="title" placeholder="Name of fritree">
+        <div>
+            <button id="add">добавидь</button>
+        </div>
+        <div class="inputs">
+            <div class="group">
+                <input type="number" placeholder="цена">
+                <select>
+                    <option value="60 см">60 см</option>
+                    <option value="90 см">90 см</option>
+                    <option value="1.2 м">1.2 м</option>
+                    <option value="1.5 м">1.5 м</option>
+                    <option value="1.8 м">1.8 м</option>
+                    <option value="2.1 м">2.1 м</option>
+                    <option value="2.4 м">2.4 м</option>
+                    <option value="2.7 м">2.7 м</option>
+                    <option value="3 м">3 м</option>
+                    <option value="4 м">4 м</option>
+                    <option value="5 м">5 м</option>
+                </select>
+            </div>
+        </div>
+        <div class="send">Отправить</div>
+    </div>
+    <div class="trees">
+        <% trees.forEach(tree => { %>
+            <div class="tree" data-id="<%= tree._id%>">
+                <img src="<%= tree.image%>">
+                <h2><%= tree.title%></h2>
+                <div class="prices">
+                    <% tree.prices.forEach(price => { %>
+                        <div class="price">cost: <%= price.cost%> KGS <span><%= price.height%></span></div>
+                    <% }); %>
+                </div>
+                <button class="delete">Delete</button>
+            </div>
+        <% }); %>
+    </div>
+    <h1 class="section-title">Запросы</h1>
+    <div class="sections">
+        <% if(offers.length > 0) { %>
+            <% offers.forEach(offer => { %>
+                <div class="offer">
+                    <div>name: <span><%= offer.name%></span></div>
+                    <div>elka: <span><%= offer.treeName%></span></div>
+                    <div>phone: <span><%= offer.phone%></span></div>
+                    <div>длинна: <span><%= offer.height%></span></div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <h2 class="Null">Нет запросов</h2>
+        <% } %>
+    </div>
+    <h1 class="section-title">Сообщения</h1>
+    <div class="sections">
+        <% if(massages.length > 0) { %>
+            <% massages.forEach(massage => { %>
+                <div class="massage">
+                    <div>name: <span><%= massage.name%></span></div>
+                    <div>email: <span><%= massage.email%></span></div>
+                    <div>massage: <span><%= massage.text%></span></div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <h2 class="Null">Нет сообщений</h2>
+        <% } %>
+    </div>
+    <script src="/assets/js/admin.js"></script>
+</body>
+</html>
